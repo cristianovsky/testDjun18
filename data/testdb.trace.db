@@ -1,0 +1,268 @@
+2026-06-19 16:30:21.670820Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTES" already exists; SQL statement:
+CREATE TABLE clientes(id INT PRIMARY KEY,NOMBRE varchar(100)) [42101-232]
+2026-06-19 16:41:50.062567Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]ID PRODUCTO ID_CLIENTE"; expected "INSERT"; SQL statement:
+ID PRODUCTO ID_CLIENTE [42001-232]
+2026-06-19 17:01:30.432835Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]SELEC *FROM CLIENTES\000d\000aJOIN PEDIDOS"; expected "SAVEPOINT, SCRIPT, SHUTDOWN"; SQL statement:
+SELEC *FROM CLIENTES
+JOIN PEDIDOS [42001-232]
+2026-06-19 17:01:59.450071Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]SELEC *FROM CLIENTES\000d\000aJOIN PEDIDOS\000d\000aON CLIENTE.ID = PEDIDOS.ID_CLIENTE"; expected "SAVEPOINT, SCRIPT, SHUTDOWN"; SQL statement:
+SELEC *FROM CLIENTES
+JOIN PEDIDOS
+ON CLIENTE.ID = PEDIDOS.ID_CLIENTE [42001-232]
+2026-06-19 17:02:06.379000Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]SELEC *FROM CLIENTES\000d\000aJOIN PEDIDOS\000d\000aON CLIENTES.ID = PEDIDOS.ID_CLIENTE"; expected "SAVEPOINT, SCRIPT, SHUTDOWN"; SQL statement:
+SELEC *FROM CLIENTES
+JOIN PEDIDOS
+ON CLIENTES.ID = PEDIDOS.ID_CLIENTE [42001-232]
+2026-06-19 17:02:24.382862Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]SELEC *FROM CLIENTES\000d\000aJOIN PEDIDOS"; expected "SAVEPOINT, SCRIPT, SHUTDOWN"; SQL statement:
+SELEC *FROM CLIENTES
+JOIN PEDIDOS [42001-232]
+2026-06-19 17:02:28.644101Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]SELEC *FROM CLIENTES\000d\000aJOIN PEDIDOS\000d\000aON CLIENTES.ID = PEDIDOS.ID_CLIENTE"; expected "SAVEPOINT, SCRIPT, SHUTDOWN"; SQL statement:
+SELEC *FROM CLIENTES
+JOIN PEDIDOS
+ON CLIENTES.ID = PEDIDOS.ID_CLIENTE [42001-232]
+2026-06-19 17:02:30.149592Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]SELEC *FROM CLIENTES\000d\000aJOIN PEDIDOS\000d\000aON CLIENTES.ID = PEDIDOS.ID_CLIENTE"; expected "SAVEPOINT, SCRIPT, SHUTDOWN"; SQL statement:
+SELEC *FROM CLIENTES
+JOIN PEDIDOS
+ON CLIENTES.ID = PEDIDOS.ID_CLIENTE [42001-232]
+2026-06-19 18:22:34.143439Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO [*]IF NOT EXISTS clientes VALUES(1, 'Juan')"; expected "identifier"; SQL statement:
+INSERT INTO IF NOT EXISTS clientes VALUES(1, 'Juan') [42001-232]
+2026-06-19 18:22:49.205701Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO [*]IF NOT EXISTS clientes VALUES(1, 'Juan')"; expected "identifier"; SQL statement:
+INSERT INTO IF NOT EXISTS clientes VALUES(1, 'Juan') [42001-232]
+2026-06-19 18:45:53.242587Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM CLIENTES \000d\000aINNER JOIN PEDIDOS,\000d\000a[*]ON CLIENTES.ID = PEDIDOS.ID_CLIENTE"; expected "identifier"; SQL statement:
+SELECT * FROM CLIENTES 
+INNER JOIN PEDIDOS,
+ON CLIENTES.ID = PEDIDOS.ID_CLIENTE [42001-232]
+2026-06-19 18:46:38.033259Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "CLIENTES.ID" not found; SQL statement:
+SELECT FROM CLIENTES NOMBRE
+INNER JOIN PEDIDOS
+ON CLIENTES.ID = PEDIDOS.ID_CLIENTE [42122-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:147)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:148)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1235)
+	at org.h2.command.query.Query.prepare(Query.java:232)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:645)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:561)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1164)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1344)
+	at org.h2.server.web.WebApp.query(WebApp.java:1142)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1108)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1095)
+	at org.h2.server.web.WebThread.process(WebThread.java:190)
+	at org.h2.server.web.WebThread.run(WebThread.java:103)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-06-19 18:46:51.767782Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Function "CLIENTES" not found; SQL statement:
+SELECT FROM CLIENTES (NOMBRE)
+INNER JOIN PEDIDOS
+ON CLIENTES.ID = PEDIDOS.ID_CLIENTE [90022-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.Parser.getFunctionAliasWithinPath(Parser.java:2431)
+	at org.h2.command.Parser.readTableFunction(Parser.java:1918)
+	at org.h2.command.Parser.readTablePrimary(Parser.java:1766)
+	at org.h2.command.Parser.readTableReference(Parser.java:2249)
+	at org.h2.command.Parser.parseSelectFromPart(Parser.java:2702)
+	at org.h2.command.Parser.parseSelect(Parser.java:2810)
+	at org.h2.command.Parser.parseQueryPrimary(Parser.java:2692)
+	at org.h2.command.Parser.parseQueryTerm(Parser.java:2547)
+	at org.h2.command.Parser.parseQueryExpressionBody(Parser.java:2526)
+	at org.h2.command.Parser.parseQueryExpressionBodyAndEndOfQuery(Parser.java:2519)
+	at org.h2.command.Parser.parseQueryExpression(Parser.java:2512)
+	at org.h2.command.Parser.parseQuery(Parser.java:2479)
+	at org.h2.command.Parser.parsePrepared(Parser.java:610)
+	at org.h2.command.Parser.parse(Parser.java:581)
+	at org.h2.command.Parser.parse(Parser.java:556)
+	at org.h2.command.Parser.prepareCommand(Parser.java:484)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:645)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:561)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1164)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1344)
+	at org.h2.server.web.WebApp.query(WebApp.java:1142)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1108)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1095)
+	at org.h2.server.web.WebThread.process(WebThread.java:190)
+	at org.h2.server.web.WebThread.run(WebThread.java:103)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-06-19 18:47:45.867875Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Ambiguous column name "ID"; SQL statement:
+SELECT ID, NOMBRE, PRODUCTO FROM CLIENTES 
+INNER JOIN PEDIDOS
+ON CLIENTES.ID = PEDIDOS.ID_CLIENTE [90059-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.mapColumn(ExpressionColumn.java:197)
+	at org.h2.expression.ExpressionColumn.mapColumns(ExpressionColumn.java:175)
+	at org.h2.command.query.Select.mapColumns(Select.java:1601)
+	at org.h2.command.query.Select.init(Select.java:1158)
+	at org.h2.command.Parser.parseQuery(Parser.java:2482)
+	at org.h2.command.Parser.parsePrepared(Parser.java:610)
+	at org.h2.command.Parser.parse(Parser.java:581)
+	at org.h2.command.Parser.parse(Parser.java:556)
+	at org.h2.command.Parser.prepareCommand(Parser.java:484)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:645)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:561)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1164)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1344)
+	at org.h2.server.web.WebApp.query(WebApp.java:1142)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1108)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1095)
+	at org.h2.server.web.WebThread.process(WebThread.java:190)
+	at org.h2.server.web.WebThread.run(WebThread.java:103)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-06-19 19:03:08.235594Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTS" not found; SQL statement:
+SELECT * FROM CLIENTS [42102-232]
+2026-06-19 19:19:53.917604Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "producto" not found [42122-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:301)
+	at org.example.App.main(App.java:19)
+2026-06-19 19:20:47.187524Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "producto" not found [42122-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:301)
+	at org.example.App.main(App.java:19)
+2026-06-19 19:22:10.512497Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTESJOIN" not found; SQL statement:
+SELECT * FROM CLIENTESJOIN PRODUCTOSON CLIENTES.ID = PRODUCTOS.CLIENTE_ID [42102-232]
+2026-06-19 19:22:40.893373Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PRODUCTOS" not found; SQL statement:
+SELECT * FROM CLIENTES JOIN PRODUCTOS ON CLIENTES.ID = PRODUCTOS.CLIENTE_ID [42102-232]
+2026-06-19 19:23:44.309900Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PRODUCTOS" not found; SQL statement:
+SELECT * FROM CLIENTES JOIN PRODUCTOS ON CLIENTES.ID = PRODUCTOS.CLIENTE_ID [42102-232]
+2026-06-19 19:24:25.396467Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PRODUCTOS" not found; SQL statement:
+SELECT * FROM CLIENTES JOIN PRODUCTOS ON CLIENTES.ID = PEDIDOS.CLIENTE_ID [42102-232]
+2026-06-19 19:24:47.583949Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "PEDIDOS.CLIENTE_ID" not found; SQL statement:
+SELECT * FROM CLIENTES JOIN PEDIDOS ON CLIENTES.ID = PEDIDOS.CLIENTE_ID [42122-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:148)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:148)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1235)
+	at org.h2.command.query.Query.prepare(Query.java:232)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:645)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:561)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1164)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:94)
+	at org.example.App.main(App.java:15)
+2026-06-22 14:23:02.521493Z database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /workspaces/testDjun18/data/testdb.mv.db [2.3.232/7]" [50000-232]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:344)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql/java.sql.DriverManager.getConnection(Unknown Source)
+	at org.example.App.main(App.java:36)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /workspaces/testDjun18/data/testdb.mv.db [2.3.232/7]" [50000-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 18 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /workspaces/testDjun18/data/testdb.mv.db [2.3.232/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 12 more
+2026-06-22 15:07:12.880072Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "SELECT * FROM CLIENTES" not found [42122-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:337)
+	at org.example.App.main(App.java:29)
+2026-06-22 15:07:48.645228Z jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTESPEDIDOS" not found; SQL statement:
+SELECT * FROM CLIENTESPEDIDOS [42102-232]
+2026-06-22 15:08:31.005195Z database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /workspaces/testDjun18/data/testdb.mv.db [2.3.232/7]" [50000-232]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:344)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql/java.sql.DriverManager.getConnection(Unknown Source)
+	at org.example.App.main(App.java:18)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /workspaces/testDjun18/data/testdb.mv.db [2.3.232/7]" [50000-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 18 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /workspaces/testDjun18/data/testdb.mv.db [2.3.232/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 12 more
