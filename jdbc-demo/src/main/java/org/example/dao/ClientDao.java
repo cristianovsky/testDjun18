@@ -11,6 +11,8 @@ public class ClientDao {
             insertClient(client);
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
 
     //Insertar cliente
     public void insertClient(Client client) throws SQLException {
