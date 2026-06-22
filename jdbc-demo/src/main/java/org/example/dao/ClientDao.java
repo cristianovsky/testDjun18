@@ -6,6 +6,12 @@ import java.sql.*;
 
 public class ClientDao {
 
+    public ClientDao(Client client) {
+        try {
+            insertClient(client);
+        } catch (SQLException e) {
+            e.printStackTrace();
+
     //Insertar cliente
     public void insertClient(Client client) throws SQLException {
         // Lógica para insertar un cliente en la base de datos

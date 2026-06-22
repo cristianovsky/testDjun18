@@ -18,7 +18,7 @@ public class App {
     List<Client> clientes = new ArrayList<>();
     
     Client client1 = new Client(4, "Luis");
-    ClientDao clientDao = new ClientDao();
+    ClientDao clientDao = new ClientDao(client1);
     
     Statement st = con.createStatement();
     ResultSet rs = st.executeQuery("SELECT * FROM CLIENTES"); 
